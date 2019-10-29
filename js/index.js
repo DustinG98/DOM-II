@@ -1,7 +1,8 @@
 // Your code goes here
 //mouseover
 let links = document.querySelectorAll(".nav-link");
-links.forEach(cv => cv.addEventListener('mouseover', () => {
+links.forEach(cv => cv.addEventListener('mouseover', (e) => {
+    e.preventDefault();
     cv.style.color="blue";
 }))
 
@@ -23,6 +24,8 @@ mainImg.addEventListener('click', () => {
     mainImg.style.display="none";
 })
 
+
+
 //mouseout
 let contentImg = document.querySelector(".img-content img");
 contentImg.addEventListener('mouseout', () => {
@@ -40,6 +43,7 @@ window.addEventListener('scroll', () => {
 //select
 let mainHeader = document.querySelector(".intro h2");
 mainHeader.addEventListener('select', () => mainHeader.style.color="red");
+
 //dblclick
 contentImg.addEventListener('dblclick', () => contentImg.style.display="none")
 
@@ -58,3 +62,17 @@ btn.forEach(cv => cv.addEventListener('mouseup', () => {
 btn.forEach(cv => cv.addEventListener('mouseenter', () => {
     TweenMax.to(cv, 2, {boxShadow:"0px 0px 10px blue"});
 }))
+
+
+
+
+//event propagation
+let body = document.querySelector('body');
+body.addEventListener('click', () => {
+    body.style.background="lightgray";
+})
+let intro = document.querySelector('.intro');
+intro.addEventListener('click', (e) => {
+    intro.style.background="purple";
+    e.stopPropagation();
+})
