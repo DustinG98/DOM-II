@@ -4,6 +4,7 @@ let links = document.querySelectorAll(".nav-link");
 links.forEach(cv => cv.addEventListener('mouseover', () => {
     cv.style.color="blue";
 }))
+
 //keydown
 let logoHeader = document.querySelector(".logo-heading");
 document.addEventListener('keydown', (e) => {
