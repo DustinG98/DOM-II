@@ -26,12 +26,15 @@ mainImg.addEventListener('click', () => {
 
 
 
-//mouseout
+//mouseenter
 let contentImg = document.querySelector(".img-content img");
-contentImg.addEventListener('mouseout', () => {
-    contentImg.style.border="2px solid blue";
+contentImg.addEventListener('mouseenter', () => {
+    contentImg.style.transform="scale(1.2)"
 })
-
+//mouseleave
+contentImg.addEventListener('mouseleave', () => {
+    contentImg.style.transform="scale(1)"
+})
 //resize
 window.addEventListener('resize', () => nav.style.background="gray");
 //scroll
